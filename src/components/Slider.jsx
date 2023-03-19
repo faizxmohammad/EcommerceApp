@@ -70,7 +70,7 @@ const Title = styled.h1`
     
     
 `
-const Description = styled.h1`
+const Desc = styled.h1`
     margin: 50px 0;
     font-size:20px;
     font-weight:500;
@@ -107,13 +107,13 @@ function Slider() {
         <Wrapper slideIndex={slideIndex}>
             {
                 sliderItems.map((item)=>(
-                <Slide bg={item.bg}>
+                <Slide bg={item.bg} key={item.id}>
                     <ImgContainer>
                     <Image src = {item.img} />
                     </ImgContainer>
                     <InfoContainer>
                         <Title>{item.title}</Title>
-                        <Description>{item.desc}</Description>
+                        <Desc>{item.desc}</Desc>
                         <Button>SHOP NOW</Button>
                     </InfoContainer>
                 </Slide>
