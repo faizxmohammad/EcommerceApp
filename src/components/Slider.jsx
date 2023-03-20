@@ -2,13 +2,13 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import {sliderItems} from "../data"
+
 const Container = styled.div`
     height:100vh;
     width :100%;
     display:flex;
     position:relative;
     overflow:hidden;
-
 `
 const Wrapper = styled.div`
     height:100%;
@@ -16,7 +16,6 @@ const Wrapper = styled.div`
     transition: all 1.5s ease;
     transform:translateX(${props => props.slideIndex * -100}vw);
 `
-
 const Arrow = styled.div`
     width:50px;
     height:50px;
@@ -34,9 +33,7 @@ const Arrow = styled.div`
     cursor:pointer;
     opacity:0.5;    
     z-index:2;
-
 `
-
 const Slide = styled.div`
     display:flex;
     height:100vh;
@@ -44,39 +41,25 @@ const Slide = styled.div`
     width:100vw;
     background-color: #${props=>props.bg}
 `
-
-
 const ImgContainer = styled.div`
     flex:1;
     height:100%;
-
 `
 const Image = styled.img`
     height:85%
 `
-
-
 const InfoContainer = styled.div`
     flex:1;
     padding:50px;
-    
-
-
 `
-
 const Title = styled.h1`
-    font-size:70px;
-
-    
-    
+    font-size:70px;   
 `
 const Desc = styled.h1`
     margin: 50px 0;
     font-size:20px;
     font-weight:500;
     letter-spacing:3px;
-
-
 `
 const Button = styled.button`
     padding:10px;
@@ -85,10 +68,6 @@ const Button = styled.button`
     cursor:pointer;
     border-radius:30px;
 `
-
-
-
-
 function Slider() {
     const [slideIndex ,setSlideIndex] = useState(0);
     const handleClick = (direction)=>{
@@ -97,7 +76,6 @@ function Slider() {
         }else{
             setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
         }
-
     }
   return (
     <Container>
@@ -118,10 +96,7 @@ function Slider() {
                     </InfoContainer>
                 </Slide>
                 ))
-
-                        }
-
-            
+            }
         </Wrapper> 
         <Arrow direction = "right" onClick={()=>handleClick("right")}>
             <ArrowRightOutlined/>

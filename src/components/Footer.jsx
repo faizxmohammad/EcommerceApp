@@ -32,15 +32,9 @@ const SocialIcon = styled.div`
     align-items:center;
     margin:10px;
 `
-
-
-
-
-
 const Center = styled.div`
     flex:1;
     padding:20px;
-
 `;
 
 const Title = styled.h3`
@@ -60,6 +54,7 @@ const List = styled.ul`
 const ListItem = styled.li`
     width:50%;
     margin-bottom:10px;
+    cursor:pointer;
 `;
 
 
@@ -81,7 +76,7 @@ const ContactItem = styled.div`
     align-items:center;
 `
 const Payment = styled.img`
-width:100%
+    width:100%
 `
 
 function Footer() {
@@ -91,7 +86,7 @@ function Footer() {
             <Logo>Dapper Drop.</Logo>
             <Desc>There are many variations of passages of Lorem Ipsum available, but
                     the majority have suffered alteration in some form, by injected
-                    humour, or randomised words which don’t look even slightly believable.
+                    humour, or randomised words which don't look even slightly believable.
             </Desc>
             <SocialContainer>
                 <SocialIcon color="3B5999">
@@ -118,7 +113,7 @@ function Footer() {
                 <ListItem>Woman Fashion</ListItem>
                 <ListItem>Accessories</ListItem>
                 <ListItem>My Account</ListItem>
-                <ListItem>Order Tracking</ListItem>
+                <ListItem> Order Tracking</ListItem>
                 <ListItem>Wishlist</ListItem>
                 <ListItem>Wishlist</ListItem>
                 <ListItem>Terms</ListItem>

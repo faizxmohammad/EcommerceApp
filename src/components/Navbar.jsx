@@ -1,10 +1,10 @@
+import { useState } from 'react'
 import { Badge } from '@material-ui/core'
 import { AddShoppingCartOutlined, Search, ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
 const Container = styled.div`
     height: 60px;
-
 `
 
 const Wrapper = styled.div`
@@ -12,15 +12,14 @@ const Wrapper = styled.div`
     display:flex;
     justify-content:space-between;
     align-items:center;
-
 `
-
 // Left section
 const Left = styled.div`
   flex:1;
   display:flex;
   align-items:center
 `
+
 const Language = styled.span`
   font-size:14px;
   cursor:pointer;  
@@ -58,12 +57,19 @@ const MenuItem = styled.div`
   cursor:pointer;
   margin-left:25px;
 ` 
-
-
-
-
 // navBar -- Main -- function 
 function Navbar() {
+  const [isHovered, setIsHovered] = useState(false);
+  const hoveredStyle = { color: 'black', fontSize: '18px', cursor: 'pointer' };
+  const defaultStyle = { color: 'gray', fontSize: '16px', cursor: 'pointer' };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
   return (
     <Container>
         <Wrapper>
@@ -71,11 +77,13 @@ function Navbar() {
               <Language>EN</Language>
               <SearchContainer>
                 <Input/>
-                <Search style={{color:"gray" , fontSize:"16px" }}/>
+                  <Search style={isHovered ? hoveredStyle : defaultStyle}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}/>
               </SearchContainer>
             </Left>
             <Center>
-              <Logo>Dapper Drop</Logo>
+              <Logo>Tharun store</Logo>
             </Center>
             <Right>
               <MenuItem>REGISTER</MenuItem>
