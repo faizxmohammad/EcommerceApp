@@ -38,25 +38,17 @@ const FilterText = styled.span`
     font-weight:600;
     margin-right:20px;
     ${mobile({
-        marginRight:"0",
-       
-
-        
+        marginRight:"0",    
       })}
-
 `
 const Select = styled.select`
     padding:10px;    
     margin-right:20px;
-
     ${mobile({
         margin:"10px 0",
-       
-        
       })}
 `
-
-const Option = styled.option``
+const Option = styled.option``;
 
 function ProductsList() {
   return (
