@@ -2,6 +2,7 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import {sliderItems} from "../data"
+import {mobile} from '../responsive'
 
 const Container = styled.div`
     height:100vh;
@@ -9,6 +10,9 @@ const Container = styled.div`
     display:flex;
     position:relative;
     overflow:hidden;
+    ${mobile({
+        display:"none"
+      })}
 `
 const Wrapper = styled.div`
     height:100%;
@@ -72,7 +76,7 @@ function Slider() {
     const [slideIndex ,setSlideIndex] = useState(0);
     const handleClick = (direction)=>{
         if(direction ==="left"){
-            setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2 );
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2 );
         }else{
             setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
         }
